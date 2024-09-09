@@ -8,6 +8,8 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
+const imageToImageRouter = require('./routes/imageToImage')
+
 // Connect to MongoDB
 connectDB();
 
@@ -16,7 +18,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-app.get('/', (req, res) => res.send('API Running'));
+// app.get('/', (req, res) => res.send('API Running'));
+app.use("/image-to-image", imageToImageRouter);
 
 // Start server
 app.listen(port, () => console.log(`Server running on port ${port}`));

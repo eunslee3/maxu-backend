@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-import { imageToImage } from '../controllers/imageToImage';
+const imageToImage = require('../controllers/imageToImage')
 
-router.post("/image-to-image", imageToImage(req, res) {
+router.post("/", imageToImage.imageToImage);
 
-});
+module.exports = router
